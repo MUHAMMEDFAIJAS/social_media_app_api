@@ -13,7 +13,7 @@ class UserSignup {
       final response = await dio.post(
         'https://social-media-5ukj.onrender.com/auth/register',
         data: signupmodel.toJson(),
-        //  options: Options(headers: {"Content-Type": "application/json"})
+          // options: Options(headers: {"Content-Type": "application/json"})
       );
       if (response.statusCode == 201) {
         log('register successful');
@@ -34,7 +34,7 @@ class UserSignup {
           "https://social-media-5ukj.onrender.com/auth/login",
           data: singnupmodel.toJson());
       if (response.statusCode == 200) {
-        log("login sucssus");
+        log("login success");
         final responseData = response.data;
         String token = responseData["token"];
         String status = responseData["status"];

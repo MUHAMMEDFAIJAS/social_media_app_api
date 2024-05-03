@@ -13,8 +13,25 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(10),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          'instagram',
+          style: TextStyle(
+              color: Colors.black, fontSize: 32, fontStyle: FontStyle.italic),
+        ),
+      ),
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.topLeft,
+                colors: [
+              Colors.blue,
+              Colors.white10,
+              Colors.redAccent,
+            ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -40,16 +57,19 @@ class LoginScreen extends StatelessWidget {
                   Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => SignUpScreen()));
                 },
-                child: const Text('Register')),
+                child: const Text(
+                  'signup',
+                  style: TextStyle(color: Color(0xFF405DE6), fontSize: 18),
+                )),
             const Gap(20),
-            FloatingActionButton(
+            TextButton(
               onPressed: () async {
                 final status = await UserSignup().login(SignupModel(
                     email: usernameController.text,
                     password: passwordController.text));
                 if (status == "success") {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) =>const BottomNav(),
+                    builder: (context) => const BottomNav(),
                   ));
                 } else {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -57,7 +77,10 @@ class LoginScreen extends StatelessWidget {
                   ));
                 }
               },
-              child: const Text('LOGIN'),
+              child: const Text(
+                'LOGIN',
+                style: TextStyle(color: Color(0xFF405DE6), fontSize: 18),
+              ),
             )
           ],
         ),
