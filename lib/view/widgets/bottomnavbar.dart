@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:insta_clone_test_1/view/screens/home_screen.dart';
 import 'package:insta_clone_test_1/view/screens/post_screen.dart';
 import 'package:insta_clone_test_1/view/screens/profile_screen.dart';
-import 'package:insta_clone_test_1/view/screens/reels_screen.dart';
+import 'package:insta_clone_test_1/view/screens/users_screen.dart';
 import 'package:insta_clone_test_1/view/screens/search_screen.dart';
 
 class BottomNav extends StatefulWidget {
@@ -19,7 +19,7 @@ class _BottomNavState extends State<BottomNav> {
     const HomeScreen(),
     const SearchScreen(),
     const PostScreen(),
-    const ReelsScreen(),
+    const UsersScreen(),
     const ProfileScreen(),
   ];
   @override
@@ -50,8 +50,8 @@ class _BottomNavState extends State<BottomNav> {
               label: 'post',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.play_circle_fill_rounded),
-              label: 'reels',
+              icon: Icon(Icons.supervised_user_circle),
+              label: 'users',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person_2_outlined),
